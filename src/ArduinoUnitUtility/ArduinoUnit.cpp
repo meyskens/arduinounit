@@ -169,15 +169,6 @@ void Test::resolve()
 #endif
 #if TEST_VERBOSITY_EXISTS(TESTS_SUMMARY_CINO)
 if (root == 0 && TEST_VERBOSITY(TESTS_SUMMARY)) {
-  out->print(F("Test summary: "));
-  out->print(passed);
-  out->print(F(" passed, "));
-  out->print(failed);
-  out->print(F(" failed, and "));
-  out->print(skipped);
-  out->print(F(" skipped, out of "));
-  out->print(count);
-  out->println(F(" test(s)."));
   out->print("\a");
 }
 #endif
