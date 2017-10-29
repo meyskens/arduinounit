@@ -113,7 +113,7 @@ uint16_t Test::passed = 0;
 uint16_t Test::failed = 0;
 uint16_t Test::skipped = 0;
 uint8_t Test::max_verbosity = TEST_VERBOSITY_ALL;
-uint8_t Test::min_verbosity = TEST_VERBOSITY_TESTS_SUMMARY;
+uint8_t Test::min_verbosity = TEST_VERBOSITY_TESTS_SUMMARY_CINO;
 
 Print* Test::out = &Serial;
 
@@ -166,6 +166,20 @@ void Test::resolve()
     out->print(count);
     out->println(F(" test(s)."));
   }
+#endif
+#if TEST_VERBOSITY_EXISTS(TESTS_SUMMARY_CINO)
+if (root == 0 && TEST_VERBOSITY(TESTS_SUMMARY)) {
+  out->print(F("Test summary: "));
+  out->print(passed);
+  out->print(F(" passed, "));
+  out->print(failed);
+  out->print(F(" failed, and "));
+  out->print(skipped);
+  out->print(F(" skipped, out of "));
+  out->print(count);
+  out->println(F(" test(s)."));
+  out->print("\a");
+}
 #endif
 }
 

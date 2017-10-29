@@ -61,6 +61,17 @@ This summary happens once all the tests have been resolved (pass, fail or skip).
 */
 #define  TEST_VERBOSITY_TESTS_SUMMARY     0x01
 
+/** 
+\brief Verbosity mask for overall summary (default).
+
+Verbosity mask for a 1-line summary of the form:
+
+    test summary: P passed, F failed, and S skipped out of T test(s).
+
+This summary happens once all the tests have been resolved (pass, fail or skip).
+*/
+#define  TEST_VERBOSITY_TESTS_SUMMARY_CINO     0xFF
+
 /**
 \brief Verbosity mask for failed test summary (default).
 
